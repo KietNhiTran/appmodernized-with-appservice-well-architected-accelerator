@@ -3,7 +3,7 @@
 This is not just another Quickstart template to spin up App Server nor demonstrate vnet integration. It aims to provide a full accerelator template for App Sevices based application modernization which meets the well architected framework guidance of Azure.
 
 ## Architecture 
-[](images/appmodernized-with-appservice-well-architected-accelerator.jpg)
+![Architecture diagram](https://raw.githubusercontent.com/KietNhiTran/appmodernized-with-appservice-well-architected-accelerator/main/images/appmodernized-with-appservice-well-architected-accelerator.jpg)
 
 ## Code structure
 This accelerator used 'bicep' as the language to deploy the whole project.
