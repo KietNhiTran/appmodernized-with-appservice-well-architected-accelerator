@@ -1,1 +1,2 @@
-# appmodernized-with-appservice-accelerator
+# Application Modernization with App Services and well-architected best practices on Azure
+

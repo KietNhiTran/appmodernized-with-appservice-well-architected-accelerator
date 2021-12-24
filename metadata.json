@@ -1,0 +1,12 @@
+{
+    "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+    "itemDisplayName": "Web app meets most of the well-architected best practices",
+    "description": "Deploys an Azure App Services web app with zone redundance, regional virtual network injection to allow the app to access an Azure SQL DB, keyvault over a private endpoint, restrict access through Application Gateway WAF V2 only, application perfiormance monitoring is turned on with application insights, central log management through log analytics workspace with network flow log monitoring.",
+    "summary": "Web app meets most of well-architected best practices",
+    "githubUsername": "kietnhitran",
+    "dateUpdated": "2021-05-12",
+    "type": "QuickStart",
+    "environments": [
+      "AzureCloud"
+    ]
+}
