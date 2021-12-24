@@ -5,14 +5,11 @@ This is not just another Quickstart template to spin up App Server nor demonstra
 ## Architecture 
 ![Architecture diagram](https://raw.githubusercontent.com/KietNhiTran/appmodernized-with-appservice-well-architected-accelerator/main/images/appmodernized-with-appservice-well-architected-accelerator.jpg)
 
-## Code structure
-This accelerator used 'bicep' as the language to deploy the whole project.
-
-The tempalte is modularized and conatins 8 modules under 'nestedtemplates' folder and a main entrance file to connect all the modules to gether.  
-
-To learn about bicep, please visit [bicep documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
-
 ## How to deploy
+The project used bicep as main language for deployment. 
+
+To learn about bicep, please visit [bicep documentation.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
+
 ```console
 az deployment sub create --name <name your deployment if you like> --template-file main.bicep --location <location of this deployment> --parameters resourceGroupName='<To be created resource group name>' location='<Where to deploy this accelerator>' sqlServerAdmin='<SQL server admin username>' sqlServerPassword='<sql server admin password>' enableZoneRedundant='<true|false>'
 ```
