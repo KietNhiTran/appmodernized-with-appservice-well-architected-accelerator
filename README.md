@@ -1,20 +1,26 @@
 # Application Modernization with App Services and well-architected best practices on Azure
 
-This is not just another Quickstart template to spin up App Server nor demonstrate vnet integration. It aims to provide a full accerelator template for App Sevices based application modernization with meets the well architected framework of Azure.
+This is not just another Quickstart template to spin up App Server nor demonstrate vnet integration. It aims to provide a full accerelator template for App Sevices based application modernization which meets the well architected framework guidance of Azure.
 
 ## Architecture 
-[](/images/appmodernized-with-appservice-well-architected-accelerator.jpg)
+[](images/appmodernized-with-appservice-well-architected-accelerator.jpg)
 
 ## Code structure
 This accelerator used 'bicep' as the language to deploy the whole project.
+
 The tempalte is modularized and conatins 8 modules under 'nestedtemplates' folder and a main entrance file to connect all the modules to gether.  
+
 To learn about bicep, please visit [bicep documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
 
-## how to deploy
-`az deployment sub create --name <name your deployment if you like> --template-file main.bicep --location <location of this deployment> --parameters resourceGroupName='<To be created resource group name>' location='<Where to deploy this accelerator>' sqlServerAdmin='<SQL server admin username>' sqlServerPassword='<sql server admin password>' enableZoneRedundant='<true|false>'`
+## How to deploy
+```console
+az deployment sub create --name <name your deployment if you like> --template-file main.bicep --location <location of this deployment> --parameters resourceGroupName='<To be created resource group name>' location='<Where to deploy this accelerator>' sqlServerAdmin='<SQL server admin username>' sqlServerPassword='<sql server admin password>' enableZoneRedundant='<true|false>'
+```
 
 Example deployement:
-`az deployment sub create --name prodeatusdeployment --template-file main.bicep --location eastus --parameters resourceGroupName='prodtemplate03-rg' location='eastus' sqlServerAdmin='sqladmin' sqlServerPassword='Abcd12345678' enableZoneRedundant='true'`
+```console
+az deployment sub create --name prodeatusdeployment --template-file main.bicep --location eastus --parameters resourceGroupName='prodtemplate03-rg' location='eastus' sqlServerAdmin='sqladmin' sqlServerPassword='Abcd12345678' enableZoneRedundant='true'
+```
 
 ## Features in this accelerator
 - Web application inbound traffic is protected via [Application Gateway web firewall OWASP 3.2 prebuilt rule set](https://docs.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules?tabs=owasp32), SSL termination and using https.
