@@ -43,9 +43,10 @@ module netwrokWatcher 'nestedtemplates/networkwatcher.bicep' = {
   params: {
     location: location
     lawsId: monitoring.outputs.lawsId_output
-    nflStorageAccountId: network.outputs.nflStorageAccountId_output
+    // nflStorageAccountId: network.outputs.nflStorageAccountId_output
     nsgId: network.outputs.nsgId_output
     nsgName: network.outputs.nsgName_output
+    nflStorageAccountName: 'nflstgacc${uniqueString(resourceGroup_resource.id)}'
   }
   dependsOn: [
     network
@@ -177,5 +178,8 @@ module ennableDBPrivateEndpoint 'nestedtemplates/privateEndpoints.bicep' = {
   dependsOn: [
     database
     network
+    ennableKVPrivateEndpoint
   ]
 }
+
+output lawsName_output string = monitoring.outputs.lawsName_output

@@ -29,17 +29,6 @@ param applicationGWSubnetSubnetAddressPrefix string = '10.0.2.0/24'
 @description('name of log analytics workspace')
 param lawsName string
 
-@description('Specifies the network flow log storage account where the log will be stored')
-param nflStorageAccountName string = 'nflstgacc${uniqueString(resourceGroup().id)}'
-
-@description('Storage Account type')
-@allowed([
-  'Standard_LRS'
-  'Standard_GRS'
-  'Standard_ZRS'
-])
-param storageAccountType string = 'Standard_LRS'
-
 var nsgName_var = '${virtualNetworkName}-Nsg'
 
 resource nsg_resource 'Microsoft.Network/networkSecurityGroups@2019-08-01' = {
@@ -146,20 +135,11 @@ resource nsg_daignostics_resource 'Microsoft.Insights/diagnosticSettings@2021-05
   }
 }
 
-resource nflStorageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
-  kind: 'StorageV2'
-  location: location
-  name: nflStorageAccountName
-  sku: {
-    name: storageAccountType
-  }
-}
-
 output virtualNetworkName_output string = virtualNetwork_resource.name
 output privateEnpointSubnetName_output string = privateEnpointSubnetName
 output applicationGWServiceEnpointSubnetName_output string = appGWSubnetName
 output applicationSubnetName_output string = appServiceSubnetName
 output nsgName_output string = nsgName_var
 output nsgId_output string = nsg_resource.id
-output nflStorageAccountId_output string = nflStorageAccount.id
+// output nflStorageAccountId_output string = nflStorageAccount.id
 
