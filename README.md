@@ -1,4 +1,4 @@
-# Application Modernization with App Services and well-architected best practices on Azure
+# Application Modernization with App Services and well-architected guidance on Azure
 
 This is not just another Quickstart template to spin up App Server nor demonstrate vnet integration. It aims to provide a full accerelator template for App Sevices based application modernization which meets the well architected framework guidance of Azure.
 
