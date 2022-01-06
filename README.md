@@ -34,7 +34,7 @@ az deployment sub create --name prodeatusdeployment --template-file main.bicep -
 - Network security group flow log is created under region network watcher and turn on traffice analysis through log analytics workspace.
 - Using managed identity to grant access and role assignment.
 
-## planned features
+## Planned features
 - Prebiult dashboard with critical metrics to the app and database.
 - Apply more security best practices like: DDoS, defenders.
 - CI/CD to demo a IaC deployment vis github action.
